@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TestPlatformer</name>
+    <events>
+        <include>Sound</include>
+        <event-block any="1" sid="962175418146856">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="540635891290566" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+                <condition id="6" name="On button pressed" sid="959646153729322" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="317033382482295" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+                <action id="0" name="Call function" sid="686475524346292" type="Function">
+                    <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="247105617520830" title="TPControls">
+            <sub-events>
+                <event-block any="1" sid="312210171787294">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="613668643031227" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="527595080369998" type="Keyboard">
+                            <param id="0" name="Key">79 (O)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="693085616161390" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="994050597101238">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="622434425345971" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="739970129002706" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="589218686541229" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="245264858248555">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="439281566356514" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">2</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="629693042309958" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="158801389452771" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="223201904595162" title="Planet Gravity">
+            <sub-events>
+                <event-block disabled="1" sid="457514643436379">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="226342008256867" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="XVector" sid="287192254290167" static="0" type="number">0</variable>
+                        <variable constant="0" name="YVector" sid="715180237332193" static="0" type="number">0</variable>
+                        <event-block disabled="1" sid="666734176739996">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="155700974538785" type="Player">
+                                    <param id="0" name="Object">Gravzone</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="846706006700254">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="763489321541694" type="Gravzone">
+                                            <param id="0" name="Instance variable">relative</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="831401895753267" type="System">
+                                            <param id="0" name="Variable">XVector</param>
+                                            <param id="1" name="Value">cos(Gravzone.a)</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="207805264953008" type="System">
+                                            <param id="0" name="Variable">YVector</param>
+                                            <param id="1" name="Value">sin(Gravzone.a)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="525447833683203">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="231090626231283" type="Gravzone">
+                                            <param id="0" name="Instance variable">relative</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="899143002262934" type="System">
+                                            <param id="0" name="Variable">XVector</param>
+                                            <param id="1" name="Value">cos(angle(player.X, player.Y, gravzone.X, gravzone.Y))</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="757854557229093" type="System">
+                                            <param id="0" name="Variable">YVector</param>
+                                            <param id="1" name="Value">sin(angle(player.X, player.Y, gravzone.X, gravzone.Y))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
