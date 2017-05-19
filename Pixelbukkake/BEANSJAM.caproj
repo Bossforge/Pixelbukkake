@@ -19,12 +19,11 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -191,7 +190,7 @@
                 <plugin id="Audio" />
             </object-type>
         </object-folder>
-        <object-folder name="TestPlatformer">
+        <object-folder name="Main">
             <object-type name="platform" sid="487498360899848">
                 <plugin id="Sprite" />
                 <behaviors>
@@ -208,14 +207,11 @@
             <object-type name="Player" sid="902903343013746">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Platform" sid="925047288159960">
-                        <behavior id="Platform" />
-                    </behavior-type>
                     <behavior-type name="BoundToLayout" sid="178905435956767">
                         <behavior id="bound" />
                     </behavior-type>
-                    <behavior-type name="ScrollTo" sid="304661892394942">
-                        <behavior id="scrollto" />
+                    <behavior-type name="8Direction" sid="285429490866379">
+                        <behavior id="EightDir" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -295,14 +291,17 @@
         <layout>TestPlatformer.xml</layout>
         <layout>TestPlanets.xml</layout>
         <layout>Sound Menu.xml</layout>
+        <layout>Main.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Menu.xml</event-sheet>
         <event-sheet>Logo.xml</event-sheet>
-        <event-sheet>Controls.xml</event-sheet>
+        <event-sheet>Menu Control.xml</event-sheet>
         <event-sheet>TestPlatformer.xml</event-sheet>
         <event-sheet>Sound Menu.xml</event-sheet>
         <event-sheet>Sound.xml</event-sheet>
+        <event-sheet>Main.xml</event-sheet>
+        <event-sheet>Player Movement.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="3" />

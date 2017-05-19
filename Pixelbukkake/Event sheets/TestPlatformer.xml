@@ -36,11 +36,7 @@
                             <param id="0" name="Key">79 (O)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="693085616161390" type="Player">
-                            <param id="0" name="Control">2</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
                 <event-block any="1" sid="994050597101238">
                     <conditions>
@@ -54,11 +50,7 @@
                             <param id="0" name="Key">68 (D)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="589218686541229" type="Player">
-                            <param id="0" name="Control">1</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
                 <event-block any="1" sid="245264858248555">
                     <conditions>
@@ -72,11 +64,7 @@
                             <param id="0" name="Key">65 (A)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="158801389452771" type="Player">
-                            <param id="0" name="Control">0</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
