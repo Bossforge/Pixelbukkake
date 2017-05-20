@@ -36,11 +36,7 @@
                             <param id="0" name="Key">79 (O)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="693085616161390" type="Player">
-                            <param id="0" name="Control">2</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
                 <event-block any="1" sid="994050597101238">
                     <conditions>
@@ -54,11 +50,7 @@
                             <param id="0" name="Key">68 (D)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="589218686541229" type="Player">
-                            <param id="0" name="Control">1</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
                 <event-block any="1" sid="245264858248555">
                     <conditions>
@@ -72,11 +64,65 @@
                             <param id="0" name="Key">65 (A)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="158801389452771" type="Player">
-                            <param id="0" name="Control">0</param>
-                        </action>
-                    </actions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="223201904595162" title="Planet Gravity">
+            <sub-events>
+                <event-block disabled="1" sid="457514643436379">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="226342008256867" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="XVector" sid="287192254290167" static="0" type="number">0</variable>
+                        <variable constant="0" name="YVector" sid="715180237332193" static="0" type="number">0</variable>
+                        <event-block disabled="1" sid="666734176739996">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="155700974538785" type="Player">
+                                    <param id="0" name="Object">Gravzone</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="846706006700254">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="763489321541694" type="Gravzone">
+                                            <param id="0" name="Instance variable">relative</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="831401895753267" type="System">
+                                            <param id="0" name="Variable">XVector</param>
+                                            <param id="1" name="Value">cos(Gravzone.a)</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="207805264953008" type="System">
+                                            <param id="0" name="Variable">YVector</param>
+                                            <param id="1" name="Value">sin(Gravzone.a)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="525447833683203">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="231090626231283" type="Gravzone">
+                                            <param id="0" name="Instance variable">relative</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="899143002262934" type="System">
+                                            <param id="0" name="Variable">XVector</param>
+                                            <param id="1" name="Value">cos(angle(player.X, player.Y, gravzone.X, gravzone.Y))</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="757854557229093" type="System">
+                                            <param id="0" name="Variable">YVector</param>
+                                            <param id="1" name="Value">sin(angle(player.X, player.Y, gravzone.X, gravzone.Y))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

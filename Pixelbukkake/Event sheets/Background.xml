@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Background</name>
+    <events>
+        <variable constant="0" name="ship_moving" sid="965373672463932" static="0" type="number">1</variable>
+        <variable comment="Hintergrund Scroll" constant="0" name="background_scroll" sid="568930450295445" static="0" type="number">100</variable>
+        <event-group description="" sid="665846327609543" title="Star_Background">
+            <sub-events>
+                <event-block sid="546612134694233">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="588600522653164" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="944522982323851" type="background_sky">
+                            <param id="0" name="Y">background_sky.Y+(dt*background_scroll)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="126469393701774">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="774129024475731" type="System">
+                            <param id="0" name="Variable">ship_moving</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="146659539268307" type="System">
+                            <param id="0" name="Variable">background_scroll</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="823313013321368">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="635117022293112" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="509768196425390" type="System">
+                            <param id="0" name="Variable">background_scroll</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="477775533048082">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="277956005382788" type="background_sky">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="180135622208293" type="background_sky">
+                            <param id="0" name="Y">-2000</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

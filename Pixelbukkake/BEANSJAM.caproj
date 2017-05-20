@@ -2,7 +2,7 @@
 <c2project>
     <name>BEANSJAM</name>
     <description></description>
-    <version>1.0.0.0</version>
+    <version>1.0.1.0</version>
     <author>Pixel Bukkake</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -19,13 +19,11 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
-        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -50,7 +48,7 @@
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preview browser">NW.js</prop>
-        <prop name="Sampling">Linear</prop>
+        <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
@@ -192,8 +190,8 @@
                 <plugin id="Audio" />
             </object-type>
         </object-folder>
-        <object-folder name="TestPlatformer">
-            <object-type name="platform" sid="487498360899848">
+        <object-folder name="Main">
+            <object-type name="Wall" sid="487498360899848">
                 <plugin id="Sprite" />
                 <behaviors>
                     <behavior-type name="Solid" sid="495405828347826">
@@ -209,63 +207,104 @@
             <object-type name="Player" sid="902903343013746">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Platform" sid="925047288159960">
-                        <behavior id="Platform" />
-                    </behavior-type>
                     <behavior-type name="BoundToLayout" sid="178905435956767">
                         <behavior id="bound" />
                     </behavior-type>
-                    <behavior-type name="ScrollTo" sid="304661892394942">
-                        <behavior id="scrollto" />
+                    <behavior-type name="8Direction" sid="285429490866379">
+                        <behavior id="EightDir" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="707676232758779" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.284" y="0.272" />
+                                <point x="0.724" y="0.292" />
+                                <point x="0.724" y="0.667999" />
+                                <point x="0.304" y="0.68" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
-        </object-folder>
-        <object-folder name="KI Test">
-            <object-type name="wall" sid="884989211711041">
+            <object-type name="Planet" sid="252092551802875">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Solid" sid="397744555479224">
+                    <behavior-type name="Solid" sid="477617812823141">
                         <behavior id="solid" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="248604736163288" speed="5">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="216002795519659" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Tim\Dropbox\BEASNSJAM perso\gravitationcircle.png">
+                            <collision-poly>
+                                <point x="0.1515" y="0.1515" />
+                                <point x="0.5" y="0.0105" />
+                                <point x="0.843" y="0.157" />
+                                <point x="0.9815" y="0.5" />
+                                <point x="0.8405" y="0.8405" />
+                                <point x="0.5" y="0.9845" />
+                                <point x="0.154" y="0.846" />
+                                <point x="0.0075" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Gravzone" sid="866348301105883">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="relative" sid="489429982561399" type="boolean" />
+                    <instance-variable name="a" sid="812827911653777" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Circle" pingpong="0" repeatcount="1" repeatto="0" sid="211148538915947" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Tim\Dropbox\BEASNSJAM perso\gravitationcircle.png">
+                            <collision-poly>
+                                <point x="0.1515" y="0.1515" />
+                                <point x="0.5" y="0.0105" />
+                                <point x="0.843" y="0.157" />
+                                <point x="0.9815" y="0.5" />
+                                <point x="0.8405" y="0.8405" />
+                                <point x="0.5" y="0.9845" />
+                                <point x="0.154" y="0.846" />
+                                <point x="0.0075" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Square" pingpong="0" repeatcount="1" repeatto="0" sid="973558775878112" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.1515" y="0.1515" />
+                                <point x="0.5" y="0.0105" />
+                                <point x="0.843" y="0.157" />
+                                <point x="0.9815" y="0.5" />
+                                <point x="0.8405" y="0.8405" />
+                                <point x="0.5" y="0.9845" />
+                                <point x="0.154" y="0.846" />
+                                <point x="0.0075" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Alien" sid="127975851779794">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="781925024749555" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="alien" sid="117549169622822">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="room" sid="273495420662153" type="number" />
-                    <instance-variable name="action" sid="563899680581897" type="string" />
-                    <instance-variable name="ID" sid="340790122347684" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Pathfinding" sid="514333274489581">
-                        <behavior id="Pathfinding" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="941543548519792" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Tim\Desktop\1001 Proto.png" />
-                    </animation>
-                </animation-folder>
+            <object-type name="background_sky" sid="473898047177093">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\Jano\Pictures\Edits\pixelbukkake\Hintergrund Sterne 2K-AUSSCHNITT.jpg" />
             </object-type>
-            <object-type name="room" sid="172661264745366">
+            <object-type name="ship_platzhalter" sid="598296033582574">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="ID" sid="334636496605757" type="number" />
-                </instance-variables>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="901688676922856" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="210014132894569" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.500888" original-source="C:\Users\Jano\Pictures\Edits\pixelbukkake\3.jpeg" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -277,17 +316,20 @@
         <layout>Menu.xml</layout>
         <layout>Controls.xml</layout>
         <layout>TestPlatformer.xml</layout>
+        <layout>TestPlanets.xml</layout>
         <layout>Sound Menu.xml</layout>
-        <layout>Pathfinding Test.xml</layout>
+        <layout>Main.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Menu.xml</event-sheet>
         <event-sheet>Logo.xml</event-sheet>
-        <event-sheet>Controls.xml</event-sheet>
+        <event-sheet>Menu Control.xml</event-sheet>
         <event-sheet>TestPlatformer.xml</event-sheet>
         <event-sheet>Sound Menu.xml</event-sheet>
         <event-sheet>Sound.xml</event-sheet>
-        <event-sheet>KI.xml</event-sheet>
+        <event-sheet>Main.xml</event-sheet>
+        <event-sheet>Player Movement.xml</event-sheet>
+        <event-sheet>Background.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="3" />
