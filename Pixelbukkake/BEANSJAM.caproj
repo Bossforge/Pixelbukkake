@@ -309,10 +309,17 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+<<<<<<< HEAD
         <object-type name="Sprite" sid="472030883633082">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="969042927758894" speed="5">
+=======
+        <object-type name="Sprite" sid="283834622297796">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="929022009255762" speed="5">
+>>>>>>> d162ebf73fd2fb3743f9a24f9c823f97740b890f
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>

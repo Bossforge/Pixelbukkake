@@ -118,8 +118,13 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
+<<<<<<< HEAD
                         <x>1182</x>
                         <y>142</y>
+=======
+                        <x>1017</x>
+                        <y>-220</y>
+>>>>>>> d162ebf73fd2fb3743f9a24f9c823f97740b890f
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
