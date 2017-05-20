@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>KI</name>
+    <events>
+        <event-block sid="740883079059774">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="595306448718194" type="System" />
+                <condition id="1" name="Is overlapping another object" sid="990575081298591" type="alien">
+                    <param id="0" name="Object">room</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="746727935722978" type="alien">
+                    <param id="0" name="Instance variable">ID</param>
+                    <param id="1" name="Value">room.ID</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>choose room to move to</comment>
+        <event-block sid="953354079670858">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="526910704273343" type="System" />
+                <condition id="-11" name="For Each" sid="653766847795323" type="System">
+                    <param id="0" name="Object">alien</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="RoomRoll" sid="880784274203443" static="0" type="number">0</variable>
+                <event-block sid="111750661924985">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="840551912538082" type="alien">
+                            <param id="0" name="Instance variable">action</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;idle&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="250682133708141" type="System">
+                            <param id="0" name="Variable">RoomRoll</param>
+                            <param id="1" name="Value">floor(random(6) + 1)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="481771755379099">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="604066056141924" type="alien">
+                                    <param id="0" name="Instance variable">room</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">roomroll</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="734718516238257" type="alien">
+                                    <param id="0" name="Instance variable">action</param>
+                                    <param id="1" name="Value">&quot;move&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="401356832024141" type="alien">
+                                    <param id="0" name="Instance variable">room</param>
+                                    <param id="1" name="Value">RoomRoll</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="850925258234493">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="224571508819691" type="alien" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="264360441212961" type="alien" />
+            </actions>
+        </event-block>
+        <event-block sid="356172021486559">
+            <conditions>
+                <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="171291465133843" type="alien" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="748409902538046" type="alien">
+                    <param id="0" name="Instance variable">action</param>
+                    <param id="1" name="Value">&quot;idle&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="699212066385885">
+            <conditions>
+                <condition behavior="Pathfinding" id="5" name="On arrived" sid="145726740756528" type="alien" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="608162494769116" type="alien">
+                    <param id="0" name="Instance variable">action</param>
+                    <param id="1" name="Value">&quot;idle&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="164758379504971">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="106428386365477" type="alien">
+                    <param id="0" name="Instance variable">action</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;move&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="264921623656112">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="827306207403385" type="room">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">alien.room</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="734904545504020" type="alien">
+                            <param id="0" name="X">room.X + random(0 + 30, room.Width - 30)</param>
+                            <param id="1" name="Y">room.Y + random(0 + 30, room.Height - 30)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="371427430563275" type="alien">
+                            <param id="0" name="Instance variable">action</param>
+                            <param id="1" name="Value">&quot;moving&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

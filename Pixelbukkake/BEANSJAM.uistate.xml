@@ -10,14 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Menu</layout>
-        <layout active="1" order="4">Main</layout>
-        <event-sheet order="1">Menu</event-sheet>
-        <event-sheet order="2">Sound Menu</event-sheet>
-        <event-sheet order="3">Sound</event-sheet>
-        <event-sheet order="5">Main</event-sheet>
-        <event-sheet order="6">Player Movement</event-sheet>
-        <event-sheet order="7">Background</event-sheet>
+        <layout order="0">Pathfinding Test</layout>
+        <event-sheet active="1" order="1">KI</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -28,10 +22,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="1" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/Controls/" />
-        <folder expanded="1" path="object-folder/Menu/" />
-        <folder expanded="1" path="object-folder/System/" />
-        <folder expanded="1" path="object-folder/Main/" />
+        <folder expanded="0" path="object-folder/Controls/" />
+        <folder expanded="0" path="object-folder/Menu/" />
+        <folder expanded="0" path="object-folder/System/" />
+        <folder expanded="0" path="object-folder/TestPlatformer/" />
+        <folder expanded="1" path="object-folder/KI Test/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -44,11 +39,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Pixelbukkake_Logo/" />
         <folder expanded="1" path="animation-folder/Scrollbar/" />
         <folder expanded="1" path="animation-folder/ScollbarIndicator/" />
-        <folder expanded="1" path="animation-folder/Wall/" />
+        <folder expanded="1" path="animation-folder/platform/" />
         <folder expanded="1" path="animation-folder/Player/" />
-        <folder expanded="1" path="animation-folder/Planet/" />
-        <folder expanded="1" path="animation-folder/Gravzone/" />
-        <folder expanded="1" path="animation-folder/Alien/" />
-        <folder expanded="1" path="animation-folder/ship_platzhalter/" />
+        <folder expanded="1" path="animation-folder/wall/" />
+        <folder expanded="1" path="animation-folder/alien/" />
+        <folder expanded="1" path="animation-folder/room/" />
     </folders-expanded>
 </c2uistate>

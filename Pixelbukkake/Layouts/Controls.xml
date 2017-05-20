@@ -2,7 +2,7 @@
 <c2layout>
     <name>Controls</name>
     <sid>601510457637022</sid>
-    <event-sheet>Menu Control</event-sheet>
+    <event-sheet>Controls</event-sheet>
     <size>
         <width>1920</width>
         <height>1080</height>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Sound</name>
+    <events>
+        <variable constant="0" name="SFXVolume" sid="341925054240429" static="0" type="number">75</variable>
+        <variable constant="0" name="MusicVolume" sid="303205339758676" static="0" type="number">30</variable>
+        <variable constant="0" name="MasterVolume" sid="431462244413313" static="0" type="number">75</variable>
+        <comment>SoundToggle: 1=on, 2=off</comment>
+        <variable constant="0" name="SoundToggle" sid="180418288854291" static="0" type="number">1</variable>
+        <comment>MusicToggle: 1=on, 2=off</comment>
+        <variable constant="0" name="MusicToggle" sid="910594884856398" static="0" type="number">2</variable>
+        <event-block sid="965453043857489">
+            <conditions>
+                <condition id="0" name="On function" sid="958039677093094" type="Function">
+                    <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="431517472676567" type="System">
+                    <param id="0" name="Variable">SoundToggle</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="991244735460972" type="Audio">
+                    <param id="0" name="Audio file">Testsound</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">((MasterVolume * SFXVolume) / 200) - 50</param>
+                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="330897958934299">
+            <conditions>
+                <condition id="5" inverted="1" name="Is tag playing" sid="828380142466691" type="Audio">
+                    <param id="0" name="Tag">&quot;Music&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="703137143640388" type="System">
+                    <param id="0" name="Variable">MusicToggle</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="592264380690439" type="System">
+                    <param id="0" name="Variable">MusicVolume</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="181546062399743" type="Audio">
+                    <param id="0" name="Audio file">Testmusic</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">((MasterVolume * MusicVolume) / 200) - 50</param>
+                    <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="259000179237104">
+            <conditions>
+                <condition id="0" name="On function" sid="989218314392381" type="Function">
+                    <param id="0" name="Name">&quot;UpdateVolume&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="118468462232431" type="Audio">
+                    <param id="0" name="Tag">&quot;Music&quot;</param>
+                    <param id="1" name="dB">((MasterVolume * MusicVolume) / 200) - 50</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="504668463383646">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="521564210605035" type="System">
+                            <param id="0" name="Variable">MusicVolume</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="22" name="Set paused" sid="699323328913812" type="Audio">
+                            <param id="0" name="Tag">&quot;Music&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="533434729880405" title="SoundToggle">
+            <sub-events>
+                <event-block sid="483914617823437">
+                    <conditions>
+                        <condition id="0" name="On function" sid="620839675413816" type="Function">
+                            <param id="0" name="Name">&quot;SoundToggle&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="563580295614862" type="System">
+                            <param id="0" name="Variable">SoundToggle</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="415595652408423">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="270467811315318" type="System">
+                            <param id="0" name="Variable">SoundToggle</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="408524298676946" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set silent" sid="298950236350456" type="Audio">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="646909501623684">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="802351670742706" type="System">
+                            <param id="0" name="Variable">SoundToggle</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="951852308738340" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set silent" sid="580406667931466" type="Audio">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
