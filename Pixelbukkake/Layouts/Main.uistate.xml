@@ -4,11 +4,11 @@
 It is entirely optional and the project will load without it.  If you are placing the project under source control,
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
-        <position-x>956.954</position-x>
-        <position-y>280.25</position-y>
-        <position-z>184.269</position-z>
-        <lookat-x>956.954</lookat-x>
-        <lookat-y>280.25</lookat-y>
+        <position-x>960</position-x>
+        <position-y>540</position-y>
+        <position-z>152.288</position-z>
+        <lookat-x>960</lookat-x>
+        <lookat-y>540</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>0</snap-to-grid>
@@ -23,12 +23,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="Hitbox" />
+    <active-layer name="MainSchiff" />
     <layers>
         <layer locked="1" name="Background" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Parallax" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="MainSchiff" parallax-in-editor="0" visible="1" />
-        <layer locked="0" name="Hitbox" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Hitbox" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="MainPlayer" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Effekte" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Blackscreen" parallax-in-editor="0" visible="1" />

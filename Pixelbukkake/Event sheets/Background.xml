@@ -4,7 +4,7 @@
     <name>Background</name>
     <events>
         <variable constant="0" name="ship_moving" sid="965373672463932" static="0" type="number">1</variable>
-        <variable comment="Hintergrund Scroll" constant="0" name="background_scroll" sid="568930450295445" static="0" type="number">200</variable>
+        <variable comment="Hintergrund Scroll" constant="0" name="background_scroll" sid="568930450295445" static="0" type="number">100</variable>
         <event-group description="" sid="665846327609543" title="Star_Background">
             <sub-events>
                 <event-block sid="546612134694233">
@@ -28,7 +28,7 @@
                     <actions>
                         <action id="-9" name="Set value" sid="146659539268307" type="System">
                             <param id="0" name="Variable">background_scroll</param>
-                            <param id="1" name="Value">200</param>
+                            <param id="1" name="Value">100</param>
                         </action>
                     </actions>
                 </event-block>
