@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu</name>
+    <events>
+        <include>Sound</include>
+        <variable constant="0" name="MainMenuPoint" sid="678696172105162" static="0" type="number">1</variable>
+        <event-group description="" sid="869912344272719" title="MainMenu">
+            <sub-events>
+                <event-block sid="225647189474656">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="230229561214834" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="112718028809789" type="System">
+                            <param id="0" name="Variable">MusicToggle</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="242017759406019">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="468156014766760" type="System">
+                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="550307172968653" type="selection">
+                                    <param id="0" name="Y">530</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="847224819997783">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="732188682421394" type="System">
+                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="739991924643053" type="selection">
+                                    <param id="0" name="Y">660</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="275325502555912">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="996183013713596" type="System">
+                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="416960377699227" type="selection">
+                                    <param id="0" name="Y">790</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="247820802727042" title="Select MainMenuPoint">
+                    <sub-events>
+                        <event-block any="1" sid="698868481379692">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="610063296317317" type="Keyboard">
+                                    <param id="0" name="Key">83 (S)</param>
+                                </condition>
+                                <condition id="5" name="Compare axis" sid="120281343958500" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Axis">1</param>
+                                    <param id="2" name="Comparison">4</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="238580799656497">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="262529335534781" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="142741873775511">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="234769139711104" type="System">
+                                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="646249270069837" type="System">
+                                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                                    <param id="1" name="Value">3</param>
+                                                </action>
+                                                <action id="-2" name="Set Y" sid="868150449808907" type="selection">
+                                                    <param id="0" name="Y">790</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="205290849872153" type="Function">
+                                                    <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="206451083662987">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="736076782441679" type="System">
+                                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="421743089771054" type="System">
+                                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                                <action id="-2" name="Set Y" sid="204578286705940" type="selection">
+                                                    <param id="0" name="Y">660</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="555194533596964" type="Function">
+                                                    <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="903684997443856">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="631325168161076" type="Keyboard">
+                                    <param id="0" name="Key">87 (W)</param>
+                                </condition>
+                                <condition id="5" name="Compare axis" sid="466911166776172" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Axis">1</param>
+                                    <param id="2" name="Comparison">2</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="135163159839360">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="486408151422230" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="608156621521541">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="968518633655223" type="System">
+                                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="869734666163546" type="System">
+                                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-2" name="Set Y" sid="289252561681382" type="selection">
+                                                    <param id="0" name="Y">530</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="795751795173484" type="Function">
+                                                    <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="178678128050736">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="647387243587127" type="System">
+                                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="285263891590664" type="System">
+                                                    <param id="0" name="Variable">MainMenuPoint</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                                <action id="-2" name="Set Y" sid="141651070018422" type="selection">
+                                                    <param id="0" name="Y">660</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="206139939764086" type="Function">
+                                                    <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="857457649380158" title="Choose MainMenuPoint">
+                    <sub-events>
+                        <event-block any="1" sid="252390370271963">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="497781089009551" type="Keyboard">
+                                    <param id="0" name="Key">13 (Return)</param>
+                                </condition>
+                                <condition id="0" name="On key pressed" sid="769144199413627" type="Keyboard">
+                                    <param id="0" name="Key">79 (O)</param>
+                                </condition>
+                                <condition id="6" name="On button pressed" sid="294284942146664" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="297749129453040">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="473005724912768" type="System">
+                                            <param id="0" name="Variable">MainMenuPoint</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="566093650658964" type="System">
+                                            <param id="0" name="Layout">TestPlatformer</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="662916854906223" type="Function">
+                                            <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="393154894366427">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="394552869173266" type="System">
+                                            <param id="0" name="Variable">MainMenuPoint</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="775406895881070" type="System">
+                                            <param id="0" name="Layout">Controls</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="486480022960990" type="Function">
+                                            <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="286029250111423">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="890346435882116" type="System">
+                                            <param id="0" name="Variable">MainMenuPoint</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="461751338866193" type="System">
+                                            <param id="0" name="Layout">Sound Menu</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="671278659854445" type="Function">
+                                            <param id="0" name="Name">&quot;playtestsound&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
