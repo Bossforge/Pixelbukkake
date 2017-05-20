@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>test</name>
+    <events>
+        <event-block sid="326169178555149">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="214068563036059" type="Alien" />
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="897365531226908" type="Alien">
+                    <param id="0" name="Distance">50</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
