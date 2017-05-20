@@ -18,7 +18,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet order="5">Main</event-sheet>
         <event-sheet order="6">Player Movement</event-sheet>
         <event-sheet order="7">Background</event-sheet>
-        <event-sheet active="1" order="8">KI</event-sheet>
+        <event-sheet order="8">KI</event-sheet>
+        <event-sheet active="1" order="9">test1</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
