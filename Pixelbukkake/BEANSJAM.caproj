@@ -330,11 +330,6 @@
         <event-sheet>Main.xml</event-sheet>
         <event-sheet>Player Movement.xml</event-sheet>
         <event-sheet>Background.xml</event-sheet>
-<<<<<<< HEAD
-        <event-sheet>test.xml</event-sheet>
-=======
-        <event-sheet>KI.xml</event-sheet>
->>>>>>> a2ae855202120dc786c0fff989c4671d24b2e986
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="3" />
